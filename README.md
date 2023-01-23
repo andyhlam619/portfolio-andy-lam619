@@ -2,8 +2,8 @@
 
 Team:
 
-* Person 1 - Which microservice?
-* Person 2 - Which microservice?
+* Person 1 - Andy Lam - Sales
+* Person 2 - Mark Ipatzi - Service
 
 ## Design
 
