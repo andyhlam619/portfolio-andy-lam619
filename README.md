@@ -42,11 +42,21 @@ docker-compose up
 
 | Feature          | URL          |
 |:-----------------|:-------------|
-|List vehicle models | http://localhost:3000/models  |
-| Second line      | foo          |
-| Third line       | quux         |
-
-
+|List vehicle models|http://localhost:3000/models|
+|Create vehicle models|http://localhost:3000/models/new|
+|List automobiles|http://localhost:3000/automobiles/|
+|Create automobiles|http://localhost:3000/automobiles/new|
+|List manufactureres|http://localhost:3000/manufacturers|
+|Create manufactureres|http://localhost:3000/manufacturers/new|
+|List service appointments|http://localhost:3000/appointments/|
+|Create service appointments|http://localhost:3000/appointments/new|
+|List service history based on a car's VIN|http://localhost:3000/history/|
+|Create a technicion|http://localhost:3000/technicians/new|
+|Creating a sale|http://localhost:3000/sales/new|
+|Creating a customer|http://localhost:3000/customer/new|
+|Creating a sales person|http://localhost:3000/salesperson/new|
+|List of all sales|http://localhost:3000/sales|
+|List sales history per sales person with a dropdown menu to filter table|http://localhost:3000/salesperson/sales|
 #### Context Map
 ![Design Diagram](https://i.imgur.com/vNHybzt.jpg)
 
