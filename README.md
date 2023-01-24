@@ -14,7 +14,7 @@ The database: PostgreSQL
 
 #### How to run
 #### Context Map
-![Design Diagram](/car-car/pictures/DesignDiagram.png)
+![Design Diagram](https://i.imgur.com/vNHybzt.jpg)
 
 ####
 ## Service microservice
