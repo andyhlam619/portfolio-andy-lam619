@@ -26,6 +26,26 @@ function Nav() {
 							List of Automobiles
 					  </NavLink>
           </li>
+            <li className="nav-item">
+              <NavLink className="nav-link active" aria-current="page" to="/">
+                Home
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/manufacturers">
+                Manufacturers List
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/manufacturers/new">
+                Manufacturers Form
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/models">
+                Vehicle Model List
+              </NavLink>
+            </li>
           </ul>
         </div>
       </div>
