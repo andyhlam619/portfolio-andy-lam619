@@ -13,6 +13,16 @@ The back-end: Django
 The database: PostgreSQL
 
 #### How to run
+* Clone the repo: `git clone https://gitlab.com/andyhlam619/car-car.git`
+* Open Docker Desktop
+* Run the following commands:
+```
+docker volume create beta-data
+docker-compose build
+docker-compose up
+```
+* Go to the website at `localhost:3000`
+
 #### Context Map
 ![Design Diagram](https://i.imgur.com/vNHybzt.jpg)
 
