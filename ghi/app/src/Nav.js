@@ -12,25 +12,26 @@ function Nav() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
-						<NavLink className="dropdown-item" to="models/new">
+              <NavLink className="nav-link active" aria-current="page" to="/">
+                Home
+              </NavLink>
+          </li>
+          <li className="nav-item">
+						<NavLink className="nav-link" to="models/new">
 							Create a Vehicle Model
 						</NavLink>
 					</li>
           <li className="nav-item">
-						<NavLink className="dropdown-item" to="automobiles/new">
+						<NavLink className="nav-link" to="automobiles/new">
 							Create an Automobile
 						</NavLink>
 					</li>
           <li className="nav-item">
-            <NavLink className="dropdown-item" to="automobiles/">
+            <NavLink className="nav-link" to="automobiles/">
 							List of Automobiles
 					  </NavLink>
           </li>
-            <li className="nav-item">
-              <NavLink className="nav-link active" aria-current="page" to="/">
-                Home
-              </NavLink>
-            </li>
+
             <li className="nav-item">
               <NavLink className="nav-link" to="/manufacturers">
                 Manufacturers List

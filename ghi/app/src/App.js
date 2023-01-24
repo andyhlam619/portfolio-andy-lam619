@@ -50,15 +50,12 @@ function App() {
           <Route path="/automobiles/" element={<AutomobileList />} />
           <Route path="/automobiles/new" element={<AutomobileForm />} />
           <Route path="models/">
-
+            <Route path="" element={<VehicleModelList models={models}/>} />
 						<Route path="new/" element={<VehicleModelForm />} />
 					</Route>
           <Route path="manufacturers" >
             <Route path="" element={<ManufacturerList manufacturers={manufacturers} />} />
             <Route path="new" element={<ManufacturerForm/>} fetchManufacturers={fetchManufacturers}/>
-          </Route>
-          <Route path="models" >
-            <Route path="" element={<VehicleModelList models={models}/>} />
           </Route>
         </Routes>
       </div>
