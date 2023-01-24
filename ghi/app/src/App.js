@@ -10,6 +10,9 @@ import ManufacturerForm from './ManufacturerForm';
 import VehicleModelList from './ListVehicleModels';
 import NewSale from './NewSale';
 import ListSales from './ListSales';
+import NewSalesPerson from './NewSalesPerson';
+import NewCustomer from './NewCustomer';
+import ListSalesPersonsSales from './ListSalesPersonsSales';
 
 
 
@@ -105,6 +108,9 @@ function App() {
           </Route>
           <Route path="/sales/new" element={<NewSale automobiles={automobiles} salespersons={salespersons} customers={customers}/>} />
           <Route path="/sales" element={<ListSales sales={sales}/>} />
+          <Route path="/salesperson/new" element={<NewSalesPerson salespersons={salespersons}/>} />
+          <Route path="/customer/new" element={<NewCustomer customers={customers}/>} />
+          <Route path="/salesperson/sales" element={<ListSalesPersonsSales salespersons={salespersons} sales={sales}/>} />
         </Routes>
       </div>
     </BrowserRouter>

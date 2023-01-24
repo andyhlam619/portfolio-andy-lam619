@@ -20,7 +20,7 @@ function ListSales(props) {
                     <td>{sale.sales_person.employee_number}</td>
                     <td>{sale.customer.name}</td>
                     <td>{sale.automobile}</td>
-                    <td>{sale.price}</td>
+                    <td>${sale.price}</td>
                 </tr>
                 );
             })}
