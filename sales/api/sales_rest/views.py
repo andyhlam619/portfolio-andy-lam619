@@ -130,28 +130,42 @@ def api_list_salesrecords(request):
         try:
             automobile_href = content["automobile"]
             automobile = AutomobileVO.objects.get(import_href=automobile_href)
-            content["automobile"] = automobile
+            if automobile.available is True:
+                content["automobile"] = automobile
 
-            customer_name = content["customer"]
-            customer = Customer.objects.get(name=customer_name)
-            content["customer"] = customer
+                customer_name = content["customer"]
+                customer = Customer.objects.get(name=customer_name)
+                content["customer"] = customer
 
-            sales_person = content["sales_person"]
-            salesperson = SalesPerson.objects.get(name=sales_person)
-            content["sales_person"] = salesperson
+                sales_person = content["sales_person"]
+                salesperson = SalesPerson.objects.get(name=sales_person)
+                content["sales_person"] = salesperson
 
-        except AutomobileVO.DoesNotExist:
-            return JsonResponse(
-                {"message": "Invalid automobile href"},
-                status=400,
+                automobile.available = False
+                automobile.save()
+
+                record = SalesRecord.objects.create(**content)
+                return JsonResponse(
+                    record,
+                    encoder=SalesRecordEncoder,
+                    safe=False,
+                )
+            else:
+                response = JsonResponse(
+                    {"message": "Sorry! No longer available."}
+                )
+            response.status_code = 400
+            return response
+        except:
+            response = JsonResponse(
+                {"message": "Could not create sales record"}
             )
+            response.status_code = 400
+            return response
 
-        record = SalesRecord.objects.create(**content)
-        return JsonResponse(
-            record,
-            encoder=SalesRecordEncoder,
-            safe=False,
-        )
+
+
+
 
 
 @require_http_methods(["GET", "DELETE"])
