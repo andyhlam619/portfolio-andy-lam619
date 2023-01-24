@@ -28,11 +28,12 @@ docker-compose up
 
 ####
 ## Service microservice
+![Service Models](https://i.imgur.com/7y3z5R3.jpg)
 
 Explain your models and integration with the inventory
 microservice, here.
 
 ## Sales microservice
+![Sales Models](https://i.imgur.com/jNnYql7.jpg)
 
-Explain your models and integration with the inventory
-microservice, here.
+In our Sales Model, we created 4 models. The first one being a `SalesPerson` with the properties `name` and `employee_number`. The second one being a `Customer` with the properties `name`, `address`, and `phone_number`. We also had a automobile value object that was taken from the `inventory-api`; the model being named `AutomobileVO`. We needed this because of our `SalesRecord` model. This model takes all the other 3 models as a foreign key as its own properties with the addition of a `price` property. To get the `AutomobileVO` data we had to use a poller to take the data from the `inventory-api`. This is how our Sales microservice was integrated with the Inventory microservice.
