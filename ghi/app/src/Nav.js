@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom';
 
-
 function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-success">
@@ -21,22 +20,22 @@ function Nav() {
               <NavLink className="nav-link" to="/models">
                 Vehicle Model List
               </NavLink>
-          </li>
-          <li className="nav-item">
-						<NavLink className="nav-link" to="models/new">
-							Create a Vehicle Model
-						</NavLink>
-					</li>
-          <li className="nav-item">
-						<NavLink className="nav-link" to="automobiles/new">
-							Create an Automobile
-						</NavLink>
-					</li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="automobiles/">
-							List of Automobiles
-					  </NavLink>
-          </li>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="models/new">
+                Create a Vehicle Model
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="automobiles/">
+                List of Automobiles
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="automobiles/new">
+                Create an Automobile
+              </NavLink>
+            </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/manufacturers">
                 Manufacturers List
@@ -44,17 +43,17 @@ function Nav() {
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/manufacturers/new">
-                Manufacturers Form
+                Create a Manufacturer
               </NavLink>
             </li>
-          <li className="nav-item">
-						<NavLink className="nav-link" to="appointments/new">
-							Enter Service Appointment
-						</NavLink>
-					</li>
             <li className="nav-item">
               <NavLink className="nav-link" to="appointments/">
                 Appointment List
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="appointments/new">
+                Create a Service Appointment
               </NavLink>
             </li>
             <li className="nav-item">
@@ -64,12 +63,22 @@ function Nav() {
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="technicians/new">
-                Enter a Technician
+                Create a Technician
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/sales/new">
-                Make a sale
+                Create a sale
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/customer/new">
+                Create a Customer
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/salesperson/new">
+                Create a Sales Person
               </NavLink>
             </li>
             <li className="nav-item">
@@ -78,18 +87,8 @@ function Nav() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/salesperson/new">
-                Add a Sales Person
-              </NavLink>
-            </li>
-            <li className="nav-item">
               <NavLink className="nav-link" to="/salesperson/sales">
                 Sales History
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/customer/new">
-                Add a Customer
               </NavLink>
             </li>
           </ul>
