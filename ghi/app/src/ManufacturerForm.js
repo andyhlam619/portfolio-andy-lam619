@@ -25,7 +25,7 @@ const handleSubmit = async (event) => {
       setName("");
     }
   }
-// //sets the values of the states depending on the value in our respective inputs///////////////////////////////////////////////////////////////////////////
+//sets the values of the states depending on the value in our respective inputs///////////////////////////////////////////////////////////////////////////
 const [name, setName] = useState('');
     const handleNameChange = (event) => {
       const value = event.target.value;
