@@ -172,6 +172,7 @@ def api_show_salesrecord(request, pk):
     if request.method == "DELETE":
         record = SalesRecord.objects.get(id=pk)
         record.delete()
+
         return JsonResponse(
             record,
             encoder=SalesRecordEncoder,

@@ -8,6 +8,8 @@ import React, {useEffect, useState} from 'react'
 import ManufacturerList from './ListManufacturers';
 import ManufacturerForm from './ManufacturerForm';
 import VehicleModelList from './ListVehicleModels';
+import NewSale from './NewSale';
+import ListSales from './ListSales';
 
 
 
@@ -33,11 +35,55 @@ function App() {
       }
   }
 
+  const [automobiles, setAutomobiles] = useState([]);
+  const fetchAutomobiles = async () => {
+    const url = 'http://localhost:8090/api/automobiles/';
+    const response = await fetch(url);
+    if (response.ok) {
+      const data = await response.json();
+      setAutomobiles(data)
+      }
+  }
+
+  const [salespersons, setSalesperson] = useState([]);
+  const fetchSalesperson = async () => {
+    const url = 'http://localhost:8090/api/salesperson/';
+    const response = await fetch(url);
+    if (response.ok) {
+      const data = await response.json();
+      setSalesperson(data)
+      }
+  }
+
+  const [customers, setCustomer] = useState([]);
+  const fetchCustomer = async () => {
+    const url = 'http://localhost:8090/api/customers/';
+    const response = await fetch(url);
+    if (response.ok) {
+      const data = await response.json();
+      setCustomer(data)
+      }
+  }
+
+  const [sales, setSales] = useState([]);
+  const fetchSales = async () => {
+    const url = 'http://localhost:8090/api/salesrecords/';
+    const response = await fetch(url);
+    if (response.ok) {
+      const data = await response.json();
+      setSales(data)
+      }
+  }
+
 
 // Using the effects
   useEffect(() => {
     fetchManufacturers();
     fetchModels();
+    fetchAutomobiles();
+    fetchSalesperson();
+    fetchCustomer();
+    fetchSales();
   }, []);
 
 ////// OUR JSX
@@ -57,6 +103,8 @@ function App() {
             <Route path="" element={<ManufacturerList manufacturers={manufacturers} />} />
             <Route path="new" element={<ManufacturerForm/>} fetchManufacturers={fetchManufacturers}/>
           </Route>
+          <Route path="/sales/new" element={<NewSale automobiles={automobiles} salespersons={salespersons} customers={customers}/>} />
+          <Route path="/sales" element={<ListSales sales={sales}/>} />
         </Routes>
       </div>
     </BrowserRouter>
