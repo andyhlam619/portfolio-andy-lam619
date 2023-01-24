@@ -1,4 +1,6 @@
 import { NavLink } from 'react-router-dom';
+import { Dropdown, DropdownItem } from 'react-bootstrap';
+
 
 function Nav() {
   return (
@@ -11,27 +13,31 @@ function Nav() {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-          <li className="nav-item">
-              <NavLink className="nav-link active" aria-current="page" to="/">
-                Home
+            <li className="nav-item">
+                <NavLink className="nav-link active" aria-current="page" to="/">
+                  Home
+                </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/models">
+                Vehicle Model List
               </NavLink>
-          </li>
-          <li className="nav-item">
-						<NavLink className="nav-link" to="models/new">
-							Create a Vehicle Model
-						</NavLink>
-					</li>
-          <li className="nav-item">
-						<NavLink className="nav-link" to="automobiles/new">
-							Create an Automobile
-						</NavLink>
-					</li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="automobiles/">
-							List of Automobiles
-					  </NavLink>
-          </li>
-
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="models/new">
+                Create a Vehicle Model
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="automobiles/new">
+                Create an Automobile
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="automobiles/">
+                List of Automobiles
+              </NavLink>
+            </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/manufacturers">
                 Manufacturers List
@@ -43,39 +49,34 @@ function Nav() {
               </NavLink>
             </li>
             <li className="nav-item">
-						<NavLink className="nav-link" to="automobiles/new">
-							Create Appointment
-						</NavLink>
-					</li>
-          <li className="nav-item">
-						<NavLink className="nav-link" to="automobiles/new">
-							Appointment List
-						</NavLink>
-					</li>
-          <li className="nav-item">
-						<NavLink className="nav-link" to="automobiles/new">
-							Enter a Technitian
-						</NavLink>
-					</li>
-          <li className="nav-item">
-						<NavLink className="nav-link" to="automobiles/new">
-							Enter Service Appointment
-						</NavLink>
-					</li>
+              <NavLink className="nav-link" to="automobiles/new">
+                Create Appointment
+              </NavLink>
+					  </li>
             <li className="nav-item">
-            <NavLink className="nav-link" to="/models">
-              Vehicle Model List
-            </NavLink>
+              <NavLink className="nav-link" to="automobiles/new">
+                Appointment List
+              </NavLink>
             </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/sales/new">
-              Make a sale
-            </NavLink>
-          </li>
             <li className="nav-item">
-            <NavLink className="nav-link" to="/sales">
-              List of All Sales
-            </NavLink>
+              <NavLink className="nav-link" to="automobiles/new">
+                Enter a Technitian
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="automobiles/new">
+                Enter Service Appointment
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/sales/new">
+                Make a sale
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/sales">
+                List of All Sales
+              </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/salesperson/new">
@@ -84,7 +85,7 @@ function Nav() {
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/salesperson/sales">
-                Sales Records
+                Sales History
               </NavLink>
             </li>
             <li className="nav-item">
