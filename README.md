@@ -25,6 +25,7 @@ docker-compose up
 
 #### Navigating
 * Look at the top of the page and you will be able to navigate to the different features of the web page. Listed below is a table of the feature and its URL, but you can also click around on the website's navbar to access the features as well.
+
 | Feature          | URL          |
 |:-----------------|:-------------|
 |List vehicle models|http://localhost:3000/models|
