@@ -51,8 +51,18 @@ docker-compose up
 # Service microservice
 ![Service Models](https://i.imgur.com/7y3z5R3.jpg)
 
-Explain your models and integration with the inventory
-microservice, here.
+What you are able to do with this Service Microservice is:
+* View list of appointments and also check/view the VIP status of a vehicle
+* View the service appointment history of a vehicle by searching the VIN number
+* Create an appointment by providing a VIN number, date and time of appointment, VIN number, choosing a technician, and a specific reason for a service appointment
+* Create a technician by inputting name and employee number
+
+The following models in the Service microservice are:
+* AutomobileVo: Fetches automobile data for the Inventory API with the information of VIN and import_href
+* Technician Model: Shows a Technician with name and employee_number information
+* Appointment Model: Shows an appointment with the descriptions of the owner, vin, technician, date/time, vip, reason, and finished status
+
+What the Service microservice does is lead the service appointments and technicians. Through the use of appointments, you are able to create an appointment, view a vehicle's appointment history by searching its' VIN number, and view a list of active appointments. Additionally, you are allowed to create a technician with the Services microservice which will then allow you to create an appointment by selecting a technician what the Service microservice poller does is get data from the automobile API within the Inventory microservice. The data it is retrieving is the VIN information from the inventory and creating an Automobile VO object. This information is then used to check if the VIN entered into the appointment form has previously been within the automobile inventory. If that is the case, this calls to the concierge to give the customer VIP treatment.
 
 # Sales microservice
 ![Sales Models](https://i.imgur.com/jNnYql7.jpg)
