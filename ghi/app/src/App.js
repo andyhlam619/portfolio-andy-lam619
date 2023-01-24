@@ -13,7 +13,10 @@ import ListSales from './ListSales';
 import NewSalesPerson from './NewSalesPerson';
 import NewCustomer from './NewCustomer';
 import ListSalesPersonsSales from './ListSalesPersonsSales';
-
+import AppointmentForm from './AppointmentForm';
+import AppointmentsList from './AppointmentList';
+import TechnicianForm from './TechnicianForm';
+import ServiceHistory from './ServiceHistory';
 
 
 function App() {
@@ -96,15 +99,19 @@ function App() {
       <div className="container">
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="technicians/new/" element={<TechnicianForm />} />
+          <Route path="appointments/" element={<AppointmentsList />} />
+					<Route path="appointments/new" element={<AppointmentForm />} />
+          <Route path="history/" element={<ServiceHistory />} />
           <Route path="/automobiles/" element={<AutomobileList />} />
           <Route path="/automobiles/new" element={<AutomobileForm />} />
           <Route path="models/">
-            <Route path="" element={<VehicleModelList models={models}/>} />
-						<Route path="new/" element={<VehicleModelForm />} />
+          <Route path="" element={<VehicleModelList models={models}/>} />
+					<Route path="new/" element={<VehicleModelForm />} />
 					</Route>
           <Route path="manufacturers" >
-            <Route path="" element={<ManufacturerList manufacturers={manufacturers} />} />
-            <Route path="new" element={<ManufacturerForm/>} fetchManufacturers={fetchManufacturers}/>
+          <Route path="" element={<ManufacturerList manufacturers={manufacturers} />} />
+          <Route path="new" element={<ManufacturerForm/>} fetchManufacturers={fetchManufacturers}/>
           </Route>
           <Route path="/sales/new" element={<NewSale automobiles={automobiles} salespersons={salespersons} customers={customers}/>} />
           <Route path="/sales" element={<ListSales sales={sales}/>} />

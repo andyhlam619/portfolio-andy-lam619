@@ -22,22 +22,22 @@ function Nav() {
               <NavLink className="nav-link" to="/models">
                 Vehicle Model List
               </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="models/new">
-                Create a Vehicle Model
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="automobiles/new">
-                Create an Automobile
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="automobiles/">
-                List of Automobiles
-              </NavLink>
-            </li>
+          </li>
+          <li className="nav-item">
+						<NavLink className="nav-link" to="models/new">
+							Create a Vehicle Model
+						</NavLink>
+					</li>
+          <li className="nav-item">
+						<NavLink className="nav-link" to="automobiles/new">
+							Create an Automobile
+						</NavLink>
+					</li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="automobiles/">
+							List of Automobiles
+					  </NavLink>
+          </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/manufacturers">
                 Manufacturers List
@@ -49,10 +49,25 @@ function Nav() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="automobiles/new">
-                Create Appointment
-              </NavLink>
-					  </li>
+						<NavLink className="nav-link" to="appointments/new">
+							Create Appointment
+						</NavLink>
+					</li>
+          <li className="nav-item">
+						<NavLink className="nav-link" to="appointments/">
+							Appointment List
+						</NavLink>
+					</li>
+          <li className="nav-item">
+						<NavLink className="nav-link" to="technicians/new">
+							Enter a Technitian
+						</NavLink>
+					</li>
+          <li className="nav-item">
+						<NavLink className="nav-link" to="appointments/">
+							Enter Service Appointment
+						</NavLink>
+					</li>
             <li className="nav-item">
               <NavLink className="nav-link" to="automobiles/new">
                 Appointment List
