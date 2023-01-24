@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom';
-import { Dropdown, DropdownItem } from 'react-bootstrap';
 
 
 function Nav() {
@@ -48,39 +47,24 @@ function Nav() {
                 Manufacturers Form
               </NavLink>
             </li>
-            <li className="nav-item">
+          <li className="nav-item">
 						<NavLink className="nav-link" to="appointments/new">
-							Create Appointment
-						</NavLink>
-					</li>
-          <li className="nav-item">
-						<NavLink className="nav-link" to="appointments/">
-							Appointment List
-						</NavLink>
-					</li>
-          <li className="nav-item">
-						<NavLink className="nav-link" to="technicians/new">
-							Enter a Technitian
-						</NavLink>
-					</li>
-          <li className="nav-item">
-						<NavLink className="nav-link" to="appointments/">
 							Enter Service Appointment
 						</NavLink>
 					</li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="automobiles/new">
+              <NavLink className="nav-link" to="appointments/">
                 Appointment List
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="automobiles/new">
-                Enter a Technitian
+              <NavLink className="nav-link" to="history/">
+                Service History
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="automobiles/new">
-                Enter Service Appointment
+              <NavLink className="nav-link" to="technicians/new">
+                Enter a Technician
               </NavLink>
             </li>
             <li className="nav-item">
