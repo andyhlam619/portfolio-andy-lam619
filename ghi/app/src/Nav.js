@@ -31,7 +31,6 @@ function Nav() {
 							List of Automobiles
 					  </NavLink>
           </li>
-
             <li className="nav-item">
               <NavLink className="nav-link" to="/manufacturers">
                 Manufacturers List
@@ -43,22 +42,22 @@ function Nav() {
               </NavLink>
             </li>
             <li className="nav-item">
-						<NavLink className="nav-link" to="automobiles/new">
+						<NavLink className="nav-link" to="appointments/new">
 							Create Appointment
 						</NavLink>
 					</li>
           <li className="nav-item">
-						<NavLink className="nav-link" to="automobiles/new">
+						<NavLink className="nav-link" to="appointments/">
 							Appointment List
 						</NavLink>
 					</li>
           <li className="nav-item">
-						<NavLink className="nav-link" to="automobiles/new">
+						<NavLink className="nav-link" to="technicians/new">
 							Enter a Technitian
 						</NavLink>
 					</li>
           <li className="nav-item">
-						<NavLink className="nav-link" to="automobiles/new">
+						<NavLink className="nav-link" to="appointments/">
 							Enter Service Appointment
 						</NavLink>
 					</li>
