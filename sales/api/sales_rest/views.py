@@ -5,6 +5,9 @@ from .models import AutomobileVO, SalesPerson, Customer, SalesRecord
 from common.json import ModelEncoder
 
 
+# encoders ##################
+
+
 class AutomobileVOEncoder(ModelEncoder):
     model = AutomobileVO
     properties = ["import_href", "color", "year", "vin", "available"]
@@ -33,7 +36,7 @@ class SalesRecordEncoder(ModelEncoder):
         return {"automobile": o.automobile.vin}
 
 
-# sales person ##
+# sales person ##################
 
 
 @require_http_methods(["GET", "POST"])
@@ -73,7 +76,7 @@ def api_show_salesperson(request, pk):
             safe=False,
         )
 
-# customers ##
+# customers ####################
 
 
 @require_http_methods(["GET", "POST"])
@@ -113,7 +116,7 @@ def api_show_customer(request, pk):
             safe=False,
         )
 
-# sales record ##
+# sales record ####################
 
 
 @require_http_methods(["GET", "POST"])
@@ -127,45 +130,34 @@ def api_list_salesrecords(request):
             )
     if request.method == "POST":
         content = json.loads(request.body)
-        try:
-            automobile_href = content["automobile"]
-            automobile = AutomobileVO.objects.get(import_href=automobile_href)
-            if automobile.available is True:
-                content["automobile"] = automobile
+        automobile_href = content["automobile"]
+        automobile = AutomobileVO.objects.get(import_href=automobile_href)
+        if automobile.available is True:
+            content["automobile"] = automobile
 
-                customer_name = content["customer"]
-                customer = Customer.objects.get(name=customer_name)
-                content["customer"] = customer
+            customer_name = content["customer"]
+            customer = Customer.objects.get(name=customer_name)
+            content["customer"] = customer
 
-                sales_person = content["sales_person"]
-                salesperson = SalesPerson.objects.get(name=sales_person)
-                content["sales_person"] = salesperson
+            sales_person = content["sales_person"]
+            salesperson = SalesPerson.objects.get(name=sales_person)
+            content["sales_person"] = salesperson
 
-                automobile.available = False
-                automobile.save()
+            automobile.available = False
+            automobile.save()
 
-                record = SalesRecord.objects.create(**content)
-                return JsonResponse(
-                    record,
-                    encoder=SalesRecordEncoder,
-                    safe=False,
-                )
-            else:
-                response = JsonResponse(
-                    {"message": "Sorry! No longer available."}
-                )
-            response.status_code = 400
-            return response
-        except:
-            response = JsonResponse(
-                {"message": "Could not create sales record"}
+            record = SalesRecord.objects.create(**content)
+            return JsonResponse(
+                record,
+                encoder=SalesRecordEncoder,
+                safe=False,
             )
-            response.status_code = 400
-            return response
-
-
-
-
+        else:
+            response = JsonResponse(
+                {"message": "Sorry! No longer available."}
+            )
+        response.status_code = 400
+        return response
 
 
 @require_http_methods(["GET", "DELETE"])
@@ -187,11 +179,7 @@ def api_show_salesrecord(request, pk):
         )
 
 
-
-
-##
-
-
+# checking if automobiles data is getting polled correctly ##################
 @require_http_methods(["GET"])
 def api_list_automobiles(request):
     if request.method == "GET":
