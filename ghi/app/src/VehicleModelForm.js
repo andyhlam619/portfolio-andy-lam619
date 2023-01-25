@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const VehicleModelForm = () => {
+const VehicleModelForm = (props) => {
 	const [name, setName] = useState("");
 	const [pictureUrl, setPictureUrl] = useState("");
 	const [manufacturers, setManufacturers] = useState([]);
@@ -43,6 +43,7 @@ const VehicleModelForm = () => {
 			setPictureUrl("");
 			setSelectedManufacturer("");
 			setSubmitted(true);
+			props.fetchModels();
 		}
 	};
 

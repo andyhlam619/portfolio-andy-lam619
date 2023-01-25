@@ -47,6 +47,7 @@ const AutomobileForm = () => {
 			setModel("");
 			setSubmitted(true);
 			setInvalid("");
+
 		} else {
 			setInvalid(true);
 		}
