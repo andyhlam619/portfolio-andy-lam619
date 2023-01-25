@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 
 
-function NewSalesPerson() {
+function NewSalesPerson(props) {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -25,6 +25,7 @@ function NewSalesPerson() {
           console.log(newDa);
           setName("");
           setEmployeeNum("");
+          props.fetchSalesperson();
         }
       }
     //sets the values of the states depending on the value in our respective inputs///////////////////////////////////////////////////////////////////////////

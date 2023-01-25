@@ -32,6 +32,7 @@ function NewSale(props) {
           setSalesPerson("");
           setCustomer("");
           setPrice("");
+          props.fetchSales();
         }
       }
 //state changes///////////////////////////////////////////////////////////////////////////
@@ -70,11 +71,13 @@ return (
                         <select value={automobile} onChange={handleAutomobileChange} required id="automobile" name="automobile" className="form-select">
                         <option value="">Choose a Automobile</option>
                         {props.automobiles.map(automobile => {
+                            if (automobile.available===true) {
                                 return (
                                     <option key={automobile.import_href} value={automobile.import_href}>
                                     {automobile.vin}
                                     </option>
                                 );
+                            }
                             })}
                         </select>
                     </div>

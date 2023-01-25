@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 
 
-function NewCustomer() {
+function NewCustomer(props) {
 ///// This chunk of code handles the submit//////
 const handleSubmit = async (event) => {
     event.preventDefault();
@@ -28,6 +28,7 @@ const handleSubmit = async (event) => {
       setName("");
       setAddress("");
       setPhone("");
+      props.fetchCustomer();
     }
   }
 //sets the values of the states depending on the value in our respective inputs///////////////////////////////////////////////////////////////////////////

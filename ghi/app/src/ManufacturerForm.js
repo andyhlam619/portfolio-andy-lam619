@@ -23,6 +23,7 @@ const handleSubmit = async (event) => {
       const newMans = await response.json();
       console.log(newMans);
       setName("");
+      props.fetchManufacturers();
     }
   }
 //sets the values of the states depending on the value in our respective inputs///////////////////////////////////////////////////////////////////////////

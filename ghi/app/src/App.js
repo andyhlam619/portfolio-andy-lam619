@@ -111,12 +111,12 @@ function App() {
 					</Route>
           <Route path="manufacturers" >
           <Route path="" element={<ManufacturerList manufacturers={manufacturers} />} />
-          <Route path="new" element={<ManufacturerForm/>} fetchManufacturers={fetchManufacturers}/>
+          <Route path="new" element={<ManufacturerForm fetchManufacturers={fetchManufacturers}/>} />
           </Route>
-          <Route path="/sales/new" element={<NewSale automobiles={automobiles} salespersons={salespersons} customers={customers}/>} />
+          <Route path="/sales/new" element={<NewSale automobiles={automobiles} salespersons={salespersons} customers={customers} fetchSales={fetchSales}/>} />
           <Route path="/sales" element={<ListSales sales={sales}/>} />
-          <Route path="/salesperson/new" element={<NewSalesPerson salespersons={salespersons}/>} />
-          <Route path="/customer/new" element={<NewCustomer customers={customers}/>} />
+          <Route path="/salesperson/new" element={<NewSalesPerson salespersons={salespersons} fetchSalesperson={fetchSalesperson}/>} />
+          <Route path="/customer/new" element={<NewCustomer customers={customers} fetchCustomer={fetchCustomer}/>} />
           <Route path="/salesperson/sales" element={<ListSalesPersonsSales salespersons={salespersons} sales={sales}/>} />
         </Routes>
       </div>
