@@ -67,7 +67,7 @@ return (
                 <h1>Create a sales record</h1>
                 <form onSubmit={handleSubmit} id="create-sales-record-form">
                     <div className="mb-3">
-                        <select value={automobile} onChange={handleAutomobileChange} required id="location" name="location" className="form-select">
+                        <select value={automobile} onChange={handleAutomobileChange} required id="automobile" name="automobile" className="form-select">
                         <option value="">Choose a Automobile</option>
                         {props.automobiles.map(automobile => {
                                 return (
@@ -79,7 +79,7 @@ return (
                         </select>
                     </div>
                     <div className="mb-3">
-                        <select value={sales_person} onChange={handleSalesPersonChange} required id="location" name="location" className="form-select">
+                        <select value={sales_person} onChange={handleSalesPersonChange} required id="sales_person" name="sales_person" className="form-select">
                         <option value="">Choose a Sales Person</option>
                         {props.salespersons.map(salesperson => {
                                 return (
@@ -91,7 +91,7 @@ return (
                         </select>
                     </div>
                     <div className="mb-3">
-                        <select value={customer} onChange={handleCustomerChange} required id="location" name="location" className="form-select">
+                        <select value={customer} onChange={handleCustomerChange} required id="customer" name="customer" className="form-select">
                         <option value="">Choose a Customer</option>
                         {props.customers.map(customer => {
                                 return (
@@ -104,7 +104,7 @@ return (
                     </div>
                     <div className="form-floating mb-3">
                         <input value={price} onChange={handlePriceChange} placeholder="Price" required type="number" name="price" id="price" className="form-control"/>
-                        <label htmlFor="price">Price (Less than 32,000)</label>
+                        <label htmlFor="price">Price</label>
                     </div>
                 <button className="btn btn-primary">Create</button>
               </form>
