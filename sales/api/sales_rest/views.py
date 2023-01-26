@@ -58,22 +58,28 @@ def api_list_salesperson(request):
                 encoder=SalesPersonEncoder,
                 safe=False,
             )
-        except SalesPerson.DoesNotExist:
+        except ValueError:
             return JsonResponse(
                 {"message": "Could not create"},
-                status=400,
+                status=500,
             )
 
 
 @require_http_methods(["GET", "DELETE"])
 def api_show_salesperson(request, pk):
     if request.method == "GET":
-        saleperson = SalesPerson.objects.get(id=pk)
-        return JsonResponse(
-            saleperson,
-            encoder=SalesPersonEncoder,
-            safe=False
-        )
+        try:
+            saleperson = SalesPerson.objects.get(id=pk)
+            return JsonResponse(
+                saleperson,
+                encoder=SalesPersonEncoder,
+                safe=False
+            )
+        except SalesPerson.DoesNotExist:
+            return JsonResponse(
+                {"message": "Does not exist"},
+                status=404,
+            )
     if request.method == "DELETE":
         salesperson = SalesPerson.objects.get(id=pk)
         salesperson.delete()
@@ -97,22 +103,34 @@ def api_list_customer(request):
             )
     if request.method == "POST":
         content = json.loads(request.body)
-        customer = Customer.objects.create(**content)
-        return JsonResponse(
-            customer,
-            encoder=CustomerEncoder,
-            safe=False,
-        )
+        try:
+            customer = Customer.objects.create(**content)
+            return JsonResponse(
+                customer,
+                encoder=CustomerEncoder,
+                safe=False,
+            )
+        except:
+            return JsonResponse(
+                {"message": "Could not create"},
+                status=500,
+            )
 
 
 @require_http_methods(["GET", "DELETE"])
 def api_show_customer(request, pk):
-    if request.method == "GET":
-        customer = Customer.objects.get(id=pk)
+    try:
+        if request.method == "GET":
+            customer = Customer.objects.get(id=pk)
+            return JsonResponse(
+                customer,
+                encoder=CustomerEncoder,
+                safe=False
+            )
+    except Customer.DoesNotExist:
         return JsonResponse(
-            customer,
-            encoder=CustomerEncoder,
-            safe=False
+            {"message": "Does not exist"},
+            status=404,
         )
     if request.method == "DELETE":
         customer = Customer.objects.get(id=pk)
@@ -137,45 +155,57 @@ def api_list_salesrecords(request):
             )
     if request.method == "POST":
         content = json.loads(request.body)
-        automobile_href = content["automobile"]
-        automobile = AutomobileVO.objects.get(import_href=automobile_href)
-        if automobile.available is True:
-            content["automobile"] = automobile
+        try:
+            automobile_href = content["automobile"]
+            automobile = AutomobileVO.objects.get(import_href=automobile_href)
+            if automobile.available is True:
+                content["automobile"] = automobile
 
-            customer_name = content["customer"]
-            customer = Customer.objects.get(name=customer_name)
-            content["customer"] = customer
+                customer_name = content["customer"]
+                customer = Customer.objects.get(name=customer_name)
+                content["customer"] = customer
 
-            sales_person = content["sales_person"]
-            salesperson = SalesPerson.objects.get(name=sales_person)
-            content["sales_person"] = salesperson
+                sales_person = content["sales_person"]
+                salesperson = SalesPerson.objects.get(name=sales_person)
+                content["sales_person"] = salesperson
 
-            automobile.available = False
-            automobile.save()
+                automobile.available = False
+                automobile.save()
 
-            record = SalesRecord.objects.create(**content)
+                record = SalesRecord.objects.create(**content)
+                return JsonResponse(
+                    record,
+                    encoder=SalesRecordEncoder,
+                    safe=False,
+                )
+            else:
+                response = JsonResponse(
+                    {"message": "Sorry! No longer available."}
+                )
+            response.status_code = 400
+            return response
+        except:
             return JsonResponse(
-                record,
-                encoder=SalesRecordEncoder,
-                safe=False,
+                {"message": "Could not create"},
+                status=500,
             )
-        else:
-            response = JsonResponse(
-                {"message": "Sorry! No longer available."}
-            )
-        response.status_code = 400
-        return response
 
 
 @require_http_methods(["GET", "DELETE"])
 def api_show_salesrecord(request, pk):
     if request.method == "GET":
-        record = SalesRecord.objects.get(id=pk)
-        return JsonResponse(
-            record,
-            encoder=SalesRecordEncoder,
-            safe=False
-        )
+        try:
+            record = SalesRecord.objects.get(id=pk)
+            return JsonResponse(
+                record,
+                encoder=SalesRecordEncoder,
+                safe=False
+            )
+        except SalesRecord.DoesNotExist:
+            return JsonResponse(
+                {"message": "Does not exist"},
+                status=404,
+            )
     if request.method == "DELETE":
         record = SalesRecord.objects.get(id=pk)
         record.delete()
