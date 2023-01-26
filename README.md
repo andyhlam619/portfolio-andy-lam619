@@ -13,7 +13,10 @@ CarCar is an application to manage aspects of an automobile dealership. The main
 * The database: PostgreSQL
 
 #### How to run
+* Open your terminal
+* Go to the directory you want to clone the project into
 * Clone the repo: `git clone https://gitlab.com/andyhlam619/car-car.git`
+* Make sure to change directory
 * Open Docker Desktop
 * Run the following commands:
 ```
@@ -21,7 +24,7 @@ docker volume create beta-data
 docker-compose build
 docker-compose up
 ```
-* Go to the website at `localhost:3000`
+* Go to the website at `localhost:3000`. It may take 2-5 minutes for the react service to load.
 
 #### Navigating
 * Look at the top of the page and you will be able to navigate to the different features of the web page. Listed below is a table of the feature and its URL, but you can also click around on the website's navbar to access the features as well.
