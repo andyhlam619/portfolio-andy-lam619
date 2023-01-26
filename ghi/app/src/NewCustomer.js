@@ -10,7 +10,6 @@ const handleSubmit = async (event) => {
     data.name = name;
     data.address= address;
     data.phone_number = phone_number;
-    console.log(data);
 
     const customerUrl = "http://localhost:8090/api/customers/";
     const fetchConfig = {
@@ -24,7 +23,6 @@ const handleSubmit = async (event) => {
     const response = await fetch(customerUrl, fetchConfig);
     if (response.ok) {
       const newDa = await response.json();
-      console.log(newDa);
       setName("");
       setAddress("");
       setPhone("");

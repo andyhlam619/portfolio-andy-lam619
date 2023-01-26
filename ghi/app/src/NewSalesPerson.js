@@ -8,7 +8,6 @@ function NewSalesPerson(props) {
         const data = {};
         data.name = name;
         data.employee_number= employee_number;
-        console.log(data);
 
         const salespersonUrl = "http://localhost:8090/api/salesperson/";
         const fetchConfig = {
@@ -22,7 +21,6 @@ function NewSalesPerson(props) {
         const response = await fetch(salespersonUrl, fetchConfig);
         if (response.ok) {
           const newDa = await response.json();
-          console.log(newDa);
           setName("");
           setEmployeeNum("");
           props.fetchSalesperson();

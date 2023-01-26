@@ -13,7 +13,6 @@ function NewSale(props) {
         data.sales_person = sales_person;
         data.customer = customer;
         data.price = price;
-        console.log(data);
 
         const salesrecordUrl = "http://localhost:8090/api/salesrecords/";
         const fetchConfig = {
@@ -27,7 +26,6 @@ function NewSale(props) {
         const response = await fetch(salesrecordUrl, fetchConfig);
         if (response.ok) {
           const data = await response.json();
-          console.log(data);
           setAutomobile("");
           setSalesPerson("");
           setCustomer("");
