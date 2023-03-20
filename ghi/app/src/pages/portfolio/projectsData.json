@@ -1,7 +1,7 @@
 [
   {
     "title": "SWÜP",
-    "image": "./projectImages/SWUP.JPG",
+    "image": "https://i.imgur.com/sp0hlD1.jpg",
     "description": "Developed an innovative waste management app that streamlines the process for users by creating a centralized platform to post and accept garbage disposal jobs.",
     "technologies": "FastAPI | React | Bootstrap | Python | JavaScript | PostgreSQL",
     "github": "https://gitlab.com/projectswup/module3-project-gamma",
@@ -10,7 +10,7 @@
   },
   {
     "title": "Automate",
-    "image": "./projectImages/automate.JPG",
+    "image": "https://i.imgur.com/SiRvR2d.jpg",
     "technologies": "Django | React | Bootstrap | Python | JavaScript | PostgreSQL",
     "description": "Developed CarCar, a comprehensive single-page automobile dealership management application with a focus on user experience and functionality.",
     "github": "https://gitlab.com/andyhlam619/car-car",
@@ -19,7 +19,7 @@
   },
   {
     "title": "Inner View",
-    "image": "./projectImages/innerview.JPG",
+    "image": "https://i.imgur.com/qFRWXEy.jpg",
     "technologies": "Django | Python | HTML | CSS",
     "description": "Developed a web application, InnerView, which improves the interview tracking process for job seekers by offering a centralized platform to manage upcoming interviews and offers.",
     "github": "https://gitlab.com/andyhlam619/interview-tracker",
