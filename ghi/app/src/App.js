@@ -9,7 +9,7 @@ function App() {
     email: "andy.h.lam1@gmail.com",
     availability: "Open for work",
     brand:
-      "My unique blend of technical expertise, creative thinking, and background in psychology allows me to approach each project with a deep understanding of the end user's perspective, resulting in highly effective user-centred digital products.",
+      " I'm a Software Engineer with expertise in FastAPI, React, Python, JavaScript, and SQL. I've had the opportunity to work on a variety of projects, from developing responsive web applications to building robust APIs. ",
   };
 
   return (

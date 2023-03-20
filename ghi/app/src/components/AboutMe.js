@@ -50,10 +50,11 @@ const AboutMe = ({ name, email, location, availability, brand }) => {
           transition={{ duration: 0.4, ease: "easeInOut" }}
         >
           <div className="contentContainer">
-            <h4>Nice to meet you</h4>
-            <h5>Frontend Web Developer who creates amazing digital experiences!</h5>
+            <h4>Hey, nice to meet you!</h4>
+            <h5>Full Stack Software Engineer</h5>
             <div className="contentDescription">
-              <p>{brand}</p>
+              <p style={{paddingBottom: "10px"}}>{brand}</p>
+              <p>As a developer, I'm passionate about finding creative solutions to complex problems. I enjoy working in a collaborative environment and thrive on the challenges that come with developing high-quality software. I'm always on the lookout for new technologies and tools that can help me improve my skills and deliver the best possible results.</p>
             </div>
             <div className="infoContainer">
               <div className="row">
