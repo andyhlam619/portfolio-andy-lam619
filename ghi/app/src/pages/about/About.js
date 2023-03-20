@@ -5,7 +5,7 @@ const About = ({ name, location, brand, email, availability }) => {
   return (
     <section className="about">
       <PageHeader title="About Me" description="Let me introduce myself" />
-      <AboutMe name={name} location={location} brand={brand} email={email} availability={availability} />
+      <AboutMe name={"Andy Lam"} location={location} brand={brand} email={email} availability={availability} />
     </section>
   );
 };
