@@ -1,75 +1,92 @@
-# CarCar
+# Portfolio - Andy Lam
 
-Team:
 
-* Person 1 - Andy Lam - Sales
-* Person 2 - Mark Ipatzi - Service
 
-# Design
-CarCar is an application to manage aspects of an automobile dealership. The main 3 microservices that tie this whole application together is the inventory, service center, and the sales center. The inventory api provides us with Manufacturer, Vehicle Model, and Automobile RESTful API endpoints. The other services will be explained further down below.
+## Getting started
 
-* The front-end: React
-* The back-end: Django
-* The database: PostgreSQL
+To make it easy for you to get started with GitLab, here's a list of recommended next steps.
 
-#### How to run
-* Open your terminal
-* Go to the directory you want to clone the project into
-* Clone the repo: `git clone https://gitlab.com/andyhlam619/car-car.git`
-* Make sure to change directory
-* Open Docker Desktop
-* Run the following commands:
+Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+
+## Add your files
+
+- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
+- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+
 ```
-docker volume create beta-data
-docker-compose build
-docker-compose up
+cd existing_repo
+git remote add origin https://gitlab.com/andyhlam619/portfolio-andy-lam.git
+git branch -M main
+git push -uf origin main
 ```
-* Go to the website at `localhost:3000`. It may take 2-5 minutes for the react service to load.
 
-#### Navigating
-* Look at the top of the page and you will be able to navigate to the different features of the web page. Listed below is a table of the feature and its URL, but you can also click around on the website's navbar to access the features as well.
+## Integrate with your tools
 
-| Feature          | URL          |
-|:-----------------|:-------------|
-|List vehicle models|http://localhost:3000/models|
-|Create vehicle models|http://localhost:3000/models/new|
-|List automobiles|http://localhost:3000/automobiles/|
-|Create automobiles|http://localhost:3000/automobiles/new|
-|List manufactureres|http://localhost:3000/manufacturers|
-|Create manufactureres|http://localhost:3000/manufacturers/new|
-|List service appointments|http://localhost:3000/appointments/|
-|Create service appointments|http://localhost:3000/appointments/new|
-|List service history based on a car's VIN|http://localhost:3000/history/|
-|Create a technicion|http://localhost:3000/technicians/new|
-|Creating a sale|http://localhost:3000/sales/new|
-|Creating a customer|http://localhost:3000/customer/new|
-|Creating a sales person|http://localhost:3000/salesperson/new|
-|List of all sales|http://localhost:3000/sales|
-|List sales history per sales person with a dropdown menu to filter table|http://localhost:3000/salesperson/sales|
+- [ ] [Set up project integrations](https://gitlab.com/andyhlam619/portfolio-andy-lam/-/settings/integrations)
 
-#### Context Map
-![Design Diagram](https://i.imgur.com/vNHybzt.jpg)
+## Collaborate with your team
 
+- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
+- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
+- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
+- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
+- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
 
-# Service microservice
-![Service Models](https://i.imgur.com/7y3z5R3.jpg)
+## Test and Deploy
 
-What you are able to do with this Service Microservice is:
-* View list of appointments and also check/view the VIP status of a vehicle
-* View the service appointment history of a vehicle by searching the VIN number
-* Create an appointment by providing a VIN number, date and time of appointment, VIN number, choosing a technician, and a specific reason for a service appointment
-* Create a technician by inputting name and employee number
+Use the built-in continuous integration in GitLab.
 
-The following models in the Service microservice are:
-* AutomobileVo: Fetches automobile data for the Inventory API with the information of VIN and import_href
-* Technician Model: Shows a Technician with name and employee_number information
-* Appointment Model: Shows an appointment with the descriptions of the owner, vin, technician, date/time, vip, reason, and finished status
+- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
+- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
+- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
+- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
+- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
 
-What the Service microservice does is lead the service appointments and technicians. Through the use of appointments, you are able to create an appointment, view a vehicle's appointment history by searching its' VIN number, and view a list of active appointments. Additionally, you are allowed to create a technician with the Services microservice which will then allow you to create an appointment by selecting a technician what the Service microservice poller does is get data from the automobile API within the Inventory microservice. The data it is retrieving is the VIN information from the inventory and creating an Automobile VO object. This information is then used to check if the VIN entered into the appointment form has previously been within the automobile inventory. If that is the case, this calls to the concierge to give the customer VIP treatment.
+***
 
-# Sales microservice
-![Sales Models](https://i.imgur.com/jNnYql7.jpg)
+# Editing this README
 
-In our Sales microservice, we created 4 models. The first one being a `SalesPerson` with the properties `name` and `employee_number`. The second one being a `Customer` with the properties `name`, `address`, and `phone_number`. We also had a automobile value object that was taken from the `inventory-api`; the model being named `AutomobileVO`. We needed this because of our `SalesRecord` model. This model takes all the other 3 models as a foreign key as its own properties with the addition of a `price` property. To get the `AutomobileVO` data we had to use a poller to take the data from the `inventory-api`. This is how our Sales microservice was integrated with the Inventory microservice.
+When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
 
-What this service does is it makes sure we can create sales and keep a history of those sales. The sales history is split into two separate nav links. One where it list all possible sales. The other lists sales based on a sales person's history. The other two componenets are for the ability to create customers and create sales persons.
+## Suggestions for a good README
+Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+
+## Name
+Choose a self-explaining name for your project.
+
+## Description
+Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+
+## Badges
+On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+
+## Visuals
+Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+
+## Installation
+Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+
+## Usage
+Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+
+## Support
+Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+
+## Roadmap
+If you have ideas for releases in the future, it is a good idea to list them in the README.
+
+## Contributing
+State if you are open to contributions and what your requirements are for accepting them.
+
+For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+
+You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+
+## Authors and acknowledgment
+Show your appreciation to those who have contributed to the project.
+
+## License
+For open source projects, say how it is licensed.
+
+## Project status
+If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
