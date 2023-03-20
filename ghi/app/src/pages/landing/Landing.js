@@ -1,8 +1,13 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import SocialIcons from "../../components/SocialIcons";
+import AboutMe from "../../components/AboutMe";
+import PageHeader from "../../components/PageHeader";
+import Form from "../../components/Form";
+import ContactInfo from "../../components/ContactInfo";
 
-const Landing = ({ name, tagline }) => {
+
+const Landing = ({ name, location, brand, email, availability, tagline }) => {
   const styles = {
     landing: {
       height: "calc(100% - 93px)",
@@ -43,6 +48,7 @@ const Landing = ({ name, tagline }) => {
   });
 
   return (
+    <>
     <section className="landing" style={styles.landing}>
       <div className="textContainer" style={styles.textContainer}>
         <motion.h1
@@ -67,6 +73,7 @@ const Landing = ({ name, tagline }) => {
       </div>
       <SocialIcons />
     </section>
+    </>
   );
 };
 
