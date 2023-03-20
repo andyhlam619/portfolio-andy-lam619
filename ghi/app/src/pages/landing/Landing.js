@@ -1,10 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import SocialIcons from "../../components/SocialIcons";
-import AboutMe from "../../components/AboutMe";
-import PageHeader from "../../components/PageHeader";
-import Form from "../../components/Form";
-import ContactInfo from "../../components/ContactInfo";
 
 
 const Landing = ({ name, location, brand, email, availability, tagline }) => {
